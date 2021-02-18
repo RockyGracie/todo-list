@@ -1,0 +1,25 @@
+{
+  "pedidos": [
+    {
+      "status": "DONE",
+      "_id": "5fc81b36c84a6f1afc9263d3",
+      "table": "1",
+      "description": "Mc Colosso",
+      "__v": 0
+    },
+    {
+      "status": "DONE",
+      "_id": "5fc81b36c84a6f1afc9266c6",
+      "table": "18",
+      "description": "Big Mac",
+      "__v": 0
+    },
+    {
+      "status": "PENDING",
+      "_id": "5fc81b36c84a6f1afc9269a9",
+      "table": "18",
+      "description": "Big Mac",
+      "__v": 0
+    }
+  ]
+}
