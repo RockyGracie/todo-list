@@ -8,6 +8,7 @@ const App = () => {
 
   const [value, setValue] = useState('');
   const [todoList, setTodoList] = useState([]);
+  // const [filteredList, setFilteredList] = useState([]);
 
   return (
     <div className="App">
@@ -20,6 +21,7 @@ const App = () => {
       />
       <TodoList
         todoList={todoList}
+        setTodoList={setTodoList}
       />
     </div>
   );

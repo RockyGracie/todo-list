@@ -9,9 +9,15 @@ const Form = ({ todoList, setTodoList, value, setValue }) => {
          ...todoList,
          {text: value, completed: false, id: Math.random() * 1000}
       ]);
-      
+
       setValue('');
    };
+
+   // const selectHandler = (e) => {
+   //    const filter = e.target.value;
+      
+   //    if(filter === 'completed') 
+   // };
 
    return (
       <form className="form-container" onSubmit={createTodoHandler}>
