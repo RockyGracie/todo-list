@@ -1,13 +1,27 @@
 import React from 'react';
 
-const Form = () => {
+const Form = ({ todoList, setTodoList, value, setValue }) => {
+
+   const createTodoHandler = (e) => {
+      e.preventDefault();
+
+      setTodoList([
+         ...todoList,
+         {text: value, completed: false, id: Math.random() * 1000}
+      ]);
+      
+      setValue('');
+   };
+
    return (
-      <form className="form-container">
+      <form className="form-container" onSubmit={createTodoHandler}>
          <div className="form-input">
             <input 
                autoFocus
                type="text"
                placeholder="Create todo..."
+               value={value}
+               onChange={(e) => setValue(e.target.value)}
             />
             <button type="submit">
                <i className="fas fa-plus"></i>
