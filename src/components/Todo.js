@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Todo = ({ text, todo, todoList, setTodoList }) => {
-   console.log(todo)
+const Todo = ({ todo, todoList, setTodoList }) => {
+   
    const completeHandler = () => {
       setTodoList(todoList.map((todoEl) => {
          if (todoEl.id === todo.id) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ todoList, setTodoList, value, setValue }) => {
+const Form = ({ value, todoList, setValue, setFilter, setTodoList, setFilteredList }) => {
 
    const createTodoHandler = (e) => {
       e.preventDefault();
@@ -10,16 +10,14 @@ const Form = ({ todoList, setTodoList, value, setValue }) => {
             ...todoList,
             {text: value, completed: false, id: Math.random() * 1000}
          ]);
-      }
+      }      
+      
+      setFilteredList(todoList);
 
       setValue('');
    };
 
-   // const selectHandler = (e) => {
-   //    const filter = e.target.value;
-      
-   //    if(filter === 'completed') 
-   // };
+   const selectHandler = (e) => setFilter(e.target.value);
 
    return (
       <form className="form-container" onSubmit={createTodoHandler}>
@@ -36,7 +34,7 @@ const Form = ({ todoList, setTodoList, value, setValue }) => {
             </button>
          </div>
          <div className="form-select">
-            <select>
+            <select onChange={selectHandler}>
                <option value="all">All</option>
                <option value="completed">Completed</option>
                <option value="uncompleted">Uncompleted</option>
