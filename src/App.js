@@ -11,9 +11,6 @@ const App = () => {
   const [filteredList, setFilteredList] = useState([]);
   const [filter, setFilter] = useState('all');
   
-  console.log(filteredList);
-  console.log(filteredList);
-  
   useEffect(() => {
     filteredTodoHandler();
   }, [filter, todoList]);
