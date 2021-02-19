@@ -1,8 +1,17 @@
 import React from 'react'
 
 const Todo = ({ text, todo, todoList, setTodoList }) => {
+   console.log(todo)
    const completeHandler = () => {
+      setTodoList(todoList.map((todoEl) => {
+         if (todoEl.id === todo.id) {
+            return {
+               ...todo, completed: !todo.completed
+            };
+         };
 
+         return todoEl;
+      }));
    };
 
    const deleteHandler = () => {
@@ -10,7 +19,7 @@ const Todo = ({ text, todo, todoList, setTodoList }) => {
    };
 
    return (
-      <div className="todo">
+      <div className={todo.completed ? 'todo completed' : 'todo'}>
          <li>{todo.text}</li>
          <button className="complete-btn" onClick={completeHandler}>
             <i className="fas fa-check"></i>

@@ -5,10 +5,12 @@ const Form = ({ todoList, setTodoList, value, setValue }) => {
    const createTodoHandler = (e) => {
       e.preventDefault();
 
-      setTodoList([
-         ...todoList,
-         {text: value, completed: false, id: Math.random() * 1000}
-      ]);
+      if (value.length !== 0) {
+         setTodoList([
+            ...todoList,
+            {text: value, completed: false, id: Math.random() * 1000}
+         ]);
+      }
 
       setValue('');
    };
